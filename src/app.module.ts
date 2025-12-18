@@ -11,6 +11,8 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { StudentsModule } from './students/students.module';
 import { ProfileModule } from './profile/profile.module';
+import { LessonsModule } from './lessons/lessons.module';
+import { ScheduleModule } from './schedule/schedule.module';
 
 @Module({
   imports: [
@@ -41,6 +43,8 @@ import { ProfileModule } from './profile/profile.module';
     AuthModule,
     StudentsModule,
     ProfileModule,
+    LessonsModule,
+    ScheduleModule,
   ],
   controllers: [AppController],
   providers: [AppService],

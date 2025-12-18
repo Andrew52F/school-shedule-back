@@ -21,6 +21,8 @@ async function bootstrap() {
     .addTag('Groups', 'Управление группами (классами)')
     .addTag('Subjects', 'Управление предметами')
     .addTag('Classrooms', 'Управление кабинетами')
+    .addTag('Lessons', 'Управление расписанием уроков')
+    .addTag('Schedule', 'Просмотр расписания (группировка по дням)')
     .addBearerAuth(
       {
         type: 'http',
@@ -61,9 +63,10 @@ async function bootstrap() {
     console.error('Error seeding admin:', error);
   }
 
-  await app.listen(3000);
-  console.log('Application is running on: http://localhost:3000');
-  console.log('Swagger documentation: http://localhost:3000/api');
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
+  console.log(`Application is running on: http://localhost:${port}`);
+  console.log(`Swagger documentation: http://localhost:${port}/api`);
 }
 bootstrap();
 
